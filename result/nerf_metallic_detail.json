@@ -1,0 +1,17 @@
+{
+  "experiment_name": "metallic_detail",
+  "method_name": "nerfacto",
+  "checkpoint": "outputs/metallic_detail/nerfacto/2025-05-15_122617/nerfstudio_models/step-000099999.ckpt",
+  "results": {
+    "psnr": 21.254972457885742,
+    "psnr_std": 2.1886136531829834,
+    "ssim": 0.7212786078453064,
+    "ssim_std": 0.09007075428962708,
+    "lpips": 0.1160288006067276,
+    "lpips_std": 0.04683429375290871,
+    "num_rays_per_sec": 108896.0,
+    "num_rays_per_sec_std": 596.614990234375,
+    "fps": 0.21006172895431519,
+    "fps_std": 0.0011508774477988482
+  }
+}

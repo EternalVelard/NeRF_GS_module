@@ -1,0 +1,17 @@
+{
+  "experiment_name": "object4",
+  "method_name": "splatfacto",
+  "checkpoint": "outputs/object4/splatfacto/2025-05-15_201844/nerfstudio_models/step-000099999.ckpt",
+  "results": {
+    "psnr": 29.037965774536133,
+    "psnr_std": 2.372978687286377,
+    "ssim": 0.9486896991729736,
+    "ssim_std": 0.02833430841565132,
+    "lpips": 0.033283330500125885,
+    "lpips_std": 0.014493548311293125,
+    "num_rays_per_sec": 132296336.0,
+    "num_rays_per_sec_std": 25758752.0,
+    "fps": 255.94134521484375,
+    "fps_std": 49.833045959472656
+  }
+}

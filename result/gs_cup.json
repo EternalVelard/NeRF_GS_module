@@ -1,0 +1,17 @@
+{
+  "experiment_name": "cup",
+  "method_name": "splatfacto",
+  "checkpoint": "outputs/cup/splatfacto/2025-05-16_192415/nerfstudio_models/step-000029999.ckpt",
+  "results": {
+    "psnr": 26.416406631469727,
+    "psnr_std": 2.6061487197875977,
+    "ssim": 0.9062772989273071,
+    "ssim_std": 0.03235338628292084,
+    "lpips": 0.07037906348705292,
+    "lpips_std": 0.026879481971263885,
+    "num_rays_per_sec": 81938312.0,
+    "num_rays_per_sec_std": 16347337.0,
+    "fps": 158.5183868408203,
+    "fps_std": 31.625661849975586
+  }
+}

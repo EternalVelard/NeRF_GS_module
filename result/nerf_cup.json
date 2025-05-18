@@ -1,0 +1,17 @@
+{
+  "experiment_name": "cup",
+  "method_name": "nerfacto",
+  "checkpoint": "outputs/cup/nerfacto/2025-05-15_142139/nerfstudio_models/step-000099999.ckpt",
+  "results": {
+    "psnr": 17.794137954711914,
+    "psnr_std": 1.212346076965332,
+    "ssim": 0.6607463359832764,
+    "ssim_std": 0.05924602970480919,
+    "lpips": 0.14515969157218933,
+    "lpips_std": 0.0195836890488863,
+    "num_rays_per_sec": 108871.6875,
+    "num_rays_per_sec_std": 631.1920166015625,
+    "fps": 0.21001482009887695,
+    "fps_std": 0.0012175762094557285
+  }
+}

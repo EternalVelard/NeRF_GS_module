@@ -1,0 +1,17 @@
+{
+  "experiment_name": "flowers",
+  "method_name": "splatfacto",
+  "checkpoint": "outputs/flowers/splatfacto/2025-05-16_112750/nerfstudio_models/step-000029999.ckpt",
+  "results": {
+    "psnr": 25.960556030273438,
+    "psnr_std": 2.1542162895202637,
+    "ssim": 0.8272252082824707,
+    "ssim_std": 0.06946971267461777,
+    "lpips": 0.10819774866104126,
+    "lpips_std": 0.023890487849712372,
+    "num_rays_per_sec": 118582104.0,
+    "num_rays_per_sec_std": 39608400.0,
+    "fps": 155.97059631347656,
+    "fps_std": 52.096778869628906
+  }
+}

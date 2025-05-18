@@ -1,0 +1,17 @@
+{
+  "experiment_name": "glass",
+  "method_name": "nerfacto",
+  "checkpoint": "outputs/glass/nerfacto/2025-05-16_193651/nerfstudio_models/step-000029999.ckpt",
+  "results": {
+    "psnr": 17.47894859313965,
+    "psnr_std": 1.5073587894439697,
+    "ssim": 0.6064624190330505,
+    "ssim_std": 0.07521836459636688,
+    "lpips": 0.12295272201299667,
+    "lpips_std": 0.014880773611366749,
+    "num_rays_per_sec": 108896.84375,
+    "num_rays_per_sec_std": 474.4822692871094,
+    "fps": 0.21006335318088531,
+    "fps_std": 0.000915282464120537
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "experiment_name": "flowers",
+  "method_name": "nerfacto",
+  "checkpoint": "outputs/flowers/nerfacto/2025-05-16_114430/nerfstudio_models/step-000099999.ckpt",
+  "results": {
+    "psnr": 23.17559242248535,
+    "psnr_std": 1.5301276445388794,
+    "ssim": 0.7310886383056641,
+    "ssim_std": 0.07161430269479752,
+    "lpips": 0.16344210505485535,
+    "lpips_std": 0.05183258652687073,
+    "num_rays_per_sec": 108758.3359375,
+    "num_rays_per_sec_std": 658.72412109375,
+    "fps": 0.14271849393844604,
+    "fps_std": 0.0008644129848107696
+  }
+}
