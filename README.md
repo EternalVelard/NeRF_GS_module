@@ -10,6 +10,7 @@ A module that uses NeRF and GS to generate a point cloud of three-dimensional ob
 - COLMAP (SfM/структура из движения),
 - преобразование в формат Nerfstudio,
 - запуск тренировки,
+- Расчёт облака точек,
 - автоматическую оценку и выгрузку метрик.
 
 Подходит для Windows и Linux(рекомендовано).
@@ -44,5 +45,6 @@ python run_all_pipeline.py --images images_dict/images_project1 --workspace vase
 - convert_to_nerfstudio.py - Генерирует transforms.json и структуру для Nerfstudio.
 - train_nerfstudio_model.py - Запускает обучение.
 - evaluate_nerfstudio_model.py - Сохраняет метрики после обучения.
+- export_pointcloud.py - Извлекает облако точек.
 - run_all_pipeline.py - Mастер-скрипт. Управляет всей цепочкой, запускает остальные скрипты с нужными параметрами.
 
