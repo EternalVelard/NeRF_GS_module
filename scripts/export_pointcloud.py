@@ -5,17 +5,18 @@ import sys
 from pathlib import Path
 
 def parse_args():
-    parser = argparse.ArgumentParser(description='Экспорт облака точек из обученной модели Nerfstudio.')
+    parser = argparse.ArgumentParser(description='Экспорт данных из обученной модели Nerfstudio.')
     parser.add_argument('--config', type=str, required=False,
                         help='Путь к config.yml (если известен).')
     parser.add_argument('--outputs-dir', type=Path, default=Path('outputs'),
                         help='Папка с результатами Nerfstudio (по умолчанию outputs)')
     parser.add_argument('--project', type=str, required=False,
                         help='Название проекта (например, vase_flower)')
-    parser.add_argument('--model', type=str, default='nerfacto',
-                        help='Модель (nerfacto, splatfacto, ...), по умолчанию nerfacto')
+    parser.add_argument('--model', type=str, required=True,
+                        choices=['nerfacto', 'splatfacto'],
+                        help='nerfacto (tsdf) или splatfacto (gaussian-splat)')
     parser.add_argument('--output-dir', type=Path, required=True,
-                        help='Папка для сохранения экспортированного облака точек')
+                        help='Папка для сохранения результата экспорта')
     return parser.parse_args()
 
 def find_latest_config(outputs_dir, project, model):
@@ -31,18 +32,19 @@ def find_latest_config(outputs_dir, project, model):
         print(f'Ошибка поиска config.yml: {e}')
         sys.exit(1)
 
-def export_pointcloud(config_path, output_dir):
+def export_artifact(config_path, output_dir, model):
     os.makedirs(output_dir, exist_ok=True)
-    cmd = [
-        "ns-export", "pointcloud",
-        "--load-config", str(config_path),
-        "--output-dir", str(output_dir),
-        "--normal-method", "open3d"
-    ]
-    print(f'Выполняется команда: {" ".join(cmd)}')
-    process = subprocess.run(cmd)
+    if model == "nerfacto":
+        export_cmd = ["ns-export", "tsdf", "--load-config", str(config_path), "--output-dir", str(output_dir)]
+    elif model == "splatfacto":
+        export_cmd = ["ns-export", "gaussian-splat", "--load-config", str(config_path), "--output-dir", str(output_dir)]
+    else:
+        print("Неизвестная модель, экспорт невозможен!")
+        sys.exit(2)
+    print(f'Выполняется команда: {" ".join(export_cmd)}')
+    process = subprocess.run(export_cmd)
     if process.returncode != 0:
-        print("Ошибка экспорта облака точек!")
+        print("Ошибка экспорта результата!")
         sys.exit(process.returncode)
     print("\nГотово!")
 
@@ -60,7 +62,7 @@ def main():
         print('Укажите либо --config, либо --project (и опционально --outputs-dir и --model)')
         sys.exit(1)
 
-    export_pointcloud(config_path, args.output_dir)
+    export_artifact(config_path, args.output_dir, args.model)
 
 if __name__ == "__main__":
     main()
